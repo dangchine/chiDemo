@@ -1,0 +1,129 @@
+<!-- <!-- <input [(ngModel)]="name" placeholder="nhap ten">
+<input [(ngModel)]="tuoi" placeholder="nhap tuoi"><br>
+<button click="save()">save</button>
+<table>
+  <thead>
+    <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Age</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let item of listData,index as i">
+    <tr>
+      <th>{{i+1}}</th>
+      <th>{{item.name}}</th>
+      <th>{{item.age}}</th>
+    </tr>
+  </tbody>
+</table> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="app.component.scss">
+  <!-- <link rel="stylesheet" href="./assets/fonts/fontawesome-free/scss/fontawesome.scss"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="tong">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <!-- <a href="#" class="btn btn-danger">new</a> -->
+    <div >
+    <button  class="btn btn-primary text-light btn-outline"><i class="fa fa-plus"></i>New</button>
+    <!-- <div class="d-grid gap-2 d-md-flex justify-content-md-end"> -->
+    <button class="print1" class="btn btn-success text-light btn-outline-info"><i class="fa fa-print"></i>Print</button></div>
+    <p> </p>
+  <!-- </div> -->
+    <div class="nav justify-content-end">
+    <input [(ngModel)]="dataName" placeholder="nhap ten">
+    <input [(ngModel)]="dataTuoi" placeholder="nhap tuoi">
+    <button class="button3" class="btn btn-danger text-light btn-outline-success" (click)="saveData()"><i class="fa fa-save"></i> Save</button>
+    <!-- <button (click)="chinhsua1(data.id)">xong</button> -->
+  </div><br>
+  <div class="nav justify-content-end">
+  <input [(ngModel)]="searchData1" placeholder="tìm kiếm">
+  <button (click)="search()" class="btn btn-primary"> Search</button>
+</div>
+  <table  class="table table-striped" >
+    <thead class="text-center">
+      <tr >
+        <th > ID <span>&#8639;&#8642;</span></th>
+        <th > Name <span>&#8639;&#8642;</span></th>
+        <th > Age <span>&#8639;&#8642;</span></th>
+        <th > Action <span>&#8639;&#8642;</span></th>
+      </tr>
+    </thead>
+      <tbody  *ngFor="let item of listData; index as i ">
+        <tr class="text-center" scope="row">
+          <td >{{i+1}} </td>
+          <td >{{item.name}}</td>
+          <td >{{item.age}}</td>
+          <td>
+           <button  (click)="xoadulieu(item.id)" class="btn btn-info btn-danger text-light btn-outline-primary"> <i class="fa fa-trash"></i> Delete</button>
+            <button class="btn btn-success btn-outline-secondary text-light" (click)="chinhsua(item)"> <i class='fa fa-clipboard'></i> Edit </button>
+          </td>
+        </tr>
+        </tbody>
+      </table> 
+    </div> 
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li *ngFor="let i of pages" class="page-info" (click)="changePage(i)"><a class="page-link">{{i}}</a></li>
+      </ul>
+    </nav>
+
+  </body>
+</html> 
+    <!-- <tbody  *ngFor="let item of listData; index as i">
+    <tr class="chine">
+      <th>{{i+1}}</th>
+      <th>{{item.name}}</th>
+      <th>{{item.age}}</th>
+      <th>
+        <button (click)="xoadulieu(item.id)">delete</button>
+      </th>
+      <th><button (click)="chinhsua(item)">edit </button></th>
+    </tr>
+    </tbody> -->
+  <!-- </table>
+
+ <input [(ngModel)]="dataName" placeholder="Nhap du lieu">
+<input [(ngModel)]="dataTuoi" placeholder="Nhap tuoi"><br>
+<button (click)="saveData () ">save</button><br>
+<! <button (click)="chinhsua1()">xong</button> -->
+<!-- <table>
+    <thead>
+      <tr>
+        <th> ID</th>
+        <th> Name </th>
+        <th> Action </th>
+        <th> Delete </th>
+        <th> Edit</th>
+      </tr>
+    </thead>
+  
+  < <tbody *ngFor="let item of listData; index as i">
+    <tr>
+      <th>{{i+1}}</th>
+      <th>{{item.name}}</th>
+      <th>{{item.age}}</th>
+      <th> -->
+        <!-- <a href="#">delete</a> -->
+        <!-- <button (click)="xoadulieu(item.id)">delete</button>
+        <button (click)="chinhsua(item)">edit </button> -->
+        <!-- <span *ngIf="dataName!=item.name; then condition1"></span>
+        <span *ngIf="dataTuoi!=item.age; then condition2"></span> -->
+        <!-- <ng-template #condition1 click="saveData()" ></ng-template>
+        <ng-template #condition2 click="saveData()" ></ng-template> -->
+      <!-- </th>
+    </tr>
+  </tbody>
+  </table> --> 
+
+  
